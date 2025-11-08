@@ -12,26 +12,28 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LanguageToggle } from './LanguageToggle';
 import { useAuth } from '@/hooks/useAuth';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Header() {
   const [location] = useLocation();
   const { user, isAuthenticated } = useAuth();
+  const { t } = useLanguage();
 
   const navItems = isAuthenticated
     ? user?.userType === 'professional'
       ? [
-          { label: 'Find Jobs', href: '/jobs', icon: Briefcase },
-          { label: 'My Services', href: '/professional/services', icon: Building2 },
-          { label: 'Messages', href: '/messages', icon: MessageSquare },
+          { label: t('nav.findJobs', 'Find Jobs'), href: '/jobs', icon: Briefcase },
+          { label: t('nav.myServices', 'My Services'), href: '/professional/services', icon: Building2 },
+          { label: t('nav.messages', 'Messages'), href: '/messages', icon: MessageSquare },
         ]
       : [
-          { label: 'Find Talent', href: '/professionals', icon: User },
-          { label: 'My Jobs', href: '/company/jobs', icon: Briefcase },
-          { label: 'Messages', href: '/messages', icon: MessageSquare },
+          { label: t('nav.findTalent', 'Find Talent'), href: '/professionals', icon: User },
+          { label: t('nav.myJobs', 'My Jobs'), href: '/company/jobs', icon: Briefcase },
+          { label: t('nav.messages', 'Messages'), href: '/messages', icon: MessageSquare },
         ]
     : [
-        { label: 'Browse Professionals', href: '/professionals' },
-        { label: 'How It Works', href: '#how-it-works' },
+        { label: t('nav.browseProfessionals', 'Browse Professionals'), href: '/professionals' },
+        { label: t('nav.howItWorks', 'How It Works'), href: '#how-it-works' },
       ];
 
   return (

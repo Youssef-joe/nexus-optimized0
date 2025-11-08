@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import enTranslations from '../locales/en.json';
+import arTranslations from '../locales/ar.json';
 
 type Language = 'en' | 'ar';
 
@@ -10,6 +12,11 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+const translations = {
+  en: enTranslations,
+  ar: arTranslations,
+};
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
@@ -36,9 +43,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguageState(lang);
   };
 
-  // Simple translation function (for MVP, returns fallback)
+  // Translation function that looks up nested keys like 'nav.findJobs'
   const t = (key: string, fallback: string) => {
-    return fallback;
+    const keys = key.split('.');
+    let value: any = translations[language];
+
+    for (const k of keys) {
+      value = value?.[k];
+    }
+
+    return value || fallback;
   };
 
   return (

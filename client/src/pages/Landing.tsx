@@ -2,8 +2,11 @@ import { ArrowRight, CheckCircle2, Users, Briefcase, Star, Globe } from 'lucide-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Landing() {
+const { t } = useLanguage();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -17,32 +20,30 @@ export default function Landing() {
             <div className="space-y-8 animate-slide-in-bottom">
               <div className="inline-block">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                  <Globe className="h-4 w-4" />
-                  <span>Bilingual Marketplace • English & Arabic</span>
+                <Globe className="h-4 w-4" />
+                <span>{t('hero.bilingualBadge', 'Bilingual Marketplace • English & Arabic')}</span>
                 </div>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-display">
-                Connect with Top
-                <span className="text-primary block">L&D Professionals</span>
-                Across MENA
+              {t('hero.title', 'Connect with Top L&D Professionals Across MENA')}
               </h1>
-              
+
               <p className="text-xl text-muted-foreground max-w-2xl">
-                AI-powered marketplace connecting companies with certified trainers, coaches, and learning & development experts. Find the perfect match for your training needs.
+                {t('hero.subtitle', 'AI-powered marketplace connecting companies with certified trainers, coaches, and learning & development experts. Find the perfect match for your training needs.')}
               </p>
 
               {/* Search Bar */}
               <div className="flex flex-col sm:flex-row gap-3 max-w-2xl">
                 <Input
-                  type="search"
-                  placeholder="Search for skills, trainers, or services..."
-                  className="flex-1 h-12"
-                  data-testid="input-hero-search"
+                type="search"
+                placeholder={t('hero.searchPlaceholder', 'Search for skills, trainers, or services...')}
+                className="flex-1 h-12"
+                data-testid="input-hero-search"
                 />
                 <Button size="lg" className="h-12 px-8 gap-2 hover-elevate active-elevate-2" data-testid="button-search">
-                  Search
-                  <ArrowRight className="h-4 w-4" />
+                {t('hero.search', 'Search')}
+                <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
 
@@ -54,8 +55,8 @@ export default function Landing() {
                   asChild
                 >
                   <a href="/api/login" data-testid="button-find-talent">
-                    <Users className="h-5 w-5" />
-                    Find Talent
+                  <Users className="h-5 w-5" />
+                  {t('hero.findTalent', 'Find Talent')}
                   </a>
                 </Button>
                 <Button 
@@ -65,8 +66,8 @@ export default function Landing() {
                   asChild
                 >
                   <a href="/api/login" data-testid="button-offer-services">
-                    <Briefcase className="h-5 w-5" />
-                    Offer Your Services
+                  <Briefcase className="h-5 w-5" />
+                  {t('hero.offerServices', 'Offer Your Services')}
                   </a>
                 </Button>
               </div>
@@ -131,18 +132,18 @@ export default function Landing() {
       <section id="how-it-works" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">How It Works</h2>
-            <p className="text-xl text-muted-foreground">
-              Get matched with the perfect L&D professional in three simple steps
-            </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">{t('howItWorks.title', 'How It Works')}</h2>
+          <p className="text-xl text-muted-foreground">
+          {t('howItWorks.subtitle', 'Get matched with the perfect L&D professional in three simple steps')}
+          </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* For Companies */}
             <Card className="overflow-hidden">
               <div className="bg-gradient-to-br from-primary/10 to-transparent p-6 border-b">
-                <h3 className="text-2xl font-bold mb-2">For Companies</h3>
-                <p className="text-muted-foreground">Find and hire top L&D talent</p>
+              <h3 className="text-2xl font-bold mb-2">{t('howItWorks.forCompanies', 'For Companies')}</h3>
+              <p className="text-muted-foreground">{t('howItWorks.forCompaniesDesc', 'Find and hire top L&D talent')}</p>
               </div>
               <CardContent className="p-6 space-y-4">
                 {[
@@ -166,8 +167,8 @@ export default function Landing() {
             {/* For Professionals */}
             <Card className="overflow-hidden">
               <div className="bg-gradient-to-br from-accent/20 to-transparent p-6 border-b">
-                <h3 className="text-2xl font-bold mb-2">For Professionals</h3>
-                <p className="text-muted-foreground">Grow your business and reach new clients</p>
+              <h3 className="text-2xl font-bold mb-2">{t('howItWorks.forProfessionals', 'For Professionals')}</h3>
+              <p className="text-muted-foreground">{t('howItWorks.forProfessionalsDesc', 'Grow your business and reach new clients')}</p>
               </div>
               <CardContent className="p-6 space-y-4">
                 {[
@@ -195,43 +196,43 @@ export default function Landing() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">Why Choose L&D Nexus</h2>
-            <p className="text-xl text-muted-foreground">
-              Everything you need to succeed in the L&D marketplace
-            </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-display">{t('features.title', 'Why Choose L&D Nexus?')}</h2>
+          <p className="text-xl text-muted-foreground">
+          {t('features.subtitle', 'Everything you need to succeed in the L&D marketplace')}
+          </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: Star,
-                title: 'AI-Powered Matching',
-                desc: 'Advanced algorithms match you with the perfect opportunities or talent based on skills, experience, and needs',
+                title: t('features.aiMatching', 'AI-Powered Matching'),
+                desc: t('features.aiMatchingDesc', 'Advanced algorithms match you with the perfect opportunities or talent based on skills, experience, and needs'),
               },
               {
                 icon: CheckCircle2,
-                title: 'Verified Professionals',
-                desc: 'All trainers are verified with credentials, certifications, and portfolio reviews',
+                title: t('features.verifiedProfessionals', 'Verified Professionals'),
+                desc: t('features.verifiedProfessionalsDesc', 'All trainers are verified with credentials, certifications, and portfolio reviews'),
               },
               {
                 icon: Globe,
-                title: 'Bilingual Support',
-                desc: 'Full support for English and Arabic with seamless language switching and RTL layout',
+                title: t('features.bilingualSupport', 'Bilingual Support'),
+                desc: t('features.bilingualSupportDesc', 'Full support for English and Arabic with seamless language switching and RTL layout'),
               },
               {
                 icon: Briefcase,
-                title: 'Secure Payments',
-                desc: 'Escrow-protected payments with milestone tracking and multi-currency support',
+                title: t('features.securePayments', 'Secure Payments'),
+                desc: t('features.securePaymentsDesc', 'Escrow-protected payments with milestone tracking and multi-currency support'),
               },
               {
                 icon: Users,
-                title: 'Real-time Collaboration',
-                desc: 'Built-in messaging, file sharing, and project management tools',
+                title: t('features.realTimeCollaboration', 'Real-time Collaboration'),
+                desc: t('features.realTimeCollaborationDesc', 'Built-in messaging, file sharing, and project management tools'),
               },
               {
                 icon: Star,
-                title: 'Quality Assurance',
-                desc: 'Rating and review system ensures transparency and quality for every project',
+                title: t('features.qualityAssurance', 'Quality Assurance'),
+                desc: t('features.qualityAssuranceDesc', 'Rating and review system ensures transparency and quality for every project'),
               },
             ].map((feature, i) => (
               <Card key={i} className="text-center p-6 hover-elevate transition-all">

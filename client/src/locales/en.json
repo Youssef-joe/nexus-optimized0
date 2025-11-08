@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "findJobs": "Find Jobs",
+    "myServices": "My Services",
+    "messages": "Messages",
+    "findTalent": "Find Talent",
+    "myJobs": "My Jobs",
+    "browseProfessionals": "Browse Professionals",
+    "howItWorks": "How It Works"
+  },
+  "hero": {
+    "bilingualBadge": "Bilingual Marketplace • English & Arabic",
+    "title": "Connect with Top L&D Professionals Across MENA",
+    "subtitle": "AI-powered marketplace connecting companies with certified trainers, coaches, and learning & development experts. Find the perfect match for your training needs.",
+    "searchPlaceholder": "Search for skills, trainers, or services...",
+    "search": "Search",
+    "findTalent": "Find Talent",
+    "offerServices": "Offer Your Services",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "title": "Why Choose L&D Nexus?",
+    "subtitle": "Everything you need to succeed in the L&D marketplace",
+    "aiMatching": "AI-Powered Matching",
+    "aiMatchingDesc": "Advanced algorithms match you with the perfect opportunities or talent based on skills, experience, and needs",
+    "verifiedProfessionals": "Verified Professionals",
+    "verifiedProfessionalsDesc": "All trainers are verified with credentials, certifications, and portfolio reviews",
+    "bilingualSupport": "Bilingual Support",
+    "bilingualSupportDesc": "Full support for English and Arabic with seamless language switching and RTL layout",
+    "securePayments": "Secure Payments",
+    "securePaymentsDesc": "Escrow-protected payments with milestone tracking and multi-currency support",
+    "realTimeCollaboration": "Real-time Collaboration",
+    "realTimeCollaborationDesc": "Built-in messaging, file sharing, and project management tools",
+    "qualityAssurance": "Quality Assurance",
+    "qualityAssuranceDesc": "Rating and review system ensures transparency and quality for every project"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Get matched with the perfect L&D professional in three simple steps",
+    "forCompanies": "For Companies",
+    "forCompaniesDesc": "Find and hire top L&D talent",
+    "forProfessionals": "For Professionals",
+    "forProfessionalsDesc": "Grow your business and reach new clients"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "close": "Close"
+  }
+}
